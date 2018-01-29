@@ -101,7 +101,7 @@ set $workspace6 "6: "
 set $workspace7 "7: "
 set $workspace8 "8: "
 set $workspace9 "9: "
-set $workspace10 "10: "
+set $workspace10 "10: &#xf2e0;"
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $workspace1
@@ -209,26 +209,32 @@ exec --no-startup-id i3-msg 'workspace $workspace1; exec terminator; workspace $
 # wallpaper using feh
 exec_always feh --bg-scale /home/rimonmostafiz/Pictures/wallpaper.jpg
 
+assign [class="google-chrome"] $workspace2
+
 assign [class="jetbrains-idea"] $workspace3
-assign [class="Slack"] $workspace6
+
+assign [class="Slack"] $workspace5
+
 assign [class="Skype"] $workspace10
+assign [class="crx_nckgahadagoaajjgafhacjanaoiihapd"] $workspace10
 
 # Disable focus follows mouse
 focus_follows_mouse no
 
 # Pulse Audio controls
-# bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-# bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+# bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5% #increase sound volume
+# bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5% #decrease sound volume
 # bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
 # Alsa Volume Control ( via Fn keys )
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 5%+ unmute
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 5%- unmute
 bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle
 
-# Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
 # Touchpad controls
 bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
@@ -247,7 +253,11 @@ exec_always xrandr --output VGA-0 --mode 1920x1080 --pos 0x0 --rotate normal --o
 workspace $workspace1 output VGA-0
 workspace $workspace3 output VGA-0
 workspace $workspace5 output VGA-0
+workspace $workspace7 output VGA-0
+workspace $workspace9 output VGA-0
 
 workspace $workspace2 output HDMI-0
 workspace $workspace4 output HDMI-0
 workspace $workspace6 output HDMI-0
+workspace $workspace8 output HDMI-0
+workspace $workspace10 output HDMI-0
