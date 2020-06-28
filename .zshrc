@@ -100,3 +100,7 @@ source $ZSH/oh-my-zsh.sh
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 [[ -s "/home/dudette/.sdkman/bin/sdkman-init.sh" ]] && source "/home/dudette/.sdkman/bin/sdkman-init.sh"
+
+# GO ENVIRONMENT VARIABLES
+export GOPATH=$HOME/Documents/golib
+export PATH=$PATH:$GOPATH/bin
