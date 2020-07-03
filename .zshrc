@@ -99,7 +99,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-[[ -s "/home/dudette/.sdkman/bin/sdkman-init.sh" ]] && source "/home/dudette/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="/Users/rimonmostafiz/.sdkman"
+[[ -s "/Users/rimonmostafiz/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/rimonmostafiz/.sdkman/bin/sdkman-init.sh"
 
 # GO ENVIRONMENT VARIABLES
 export GOPATH=$HOME/Documents/golib
